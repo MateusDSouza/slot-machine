@@ -31,9 +31,9 @@ class Game:
             self.start_time = current_time
             self.screen.fill((0,0,0))
             self.screen.blit(self.bg_image,(0,0))
-            pygame.display.flip()
-            #self.machine.update(self.delta_time)
             
+            self.machine.update(self.delta_time)
+            #pygame.display.flip()
             
 
             pygame.display.update()
