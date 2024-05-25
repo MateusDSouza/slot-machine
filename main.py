@@ -27,7 +27,7 @@ class Game:
                     sys.exit()
 
             current_time = pygame.time.get_ticks()
-            self.delta_time = current_time -self.start_time/1000.0
+            self.delta_time = (current_time -self.start_time)/1000.0
             self.start_time = current_time
             self.screen.fill((0,0,0))
             self.screen.blit(self.bg_image,(0,0))
