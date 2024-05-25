@@ -12,7 +12,7 @@ class Game:
         self.bg_image = pygame.image.load(BG_IMAGE_PATH).convert_alpha()
         self.machine = Machine()
         self.delta_time = 0
-
+        self.grid_image = pygame.image.load(GRID_IMAGE_PATH).convert_alpha()
         main_sound = pygame.mixer.Sound(SOUND_TRACK_PATH)
         main_sound.play(loops=-1)
 
@@ -33,8 +33,7 @@ class Game:
             self.screen.blit(self.bg_image,(0,0))
             
             self.machine.update(self.delta_time)
-            #pygame.display.flip()
-            
+            self.screen.blit(self.grid_image,(0,0))
 
             pygame.display.update()
             self.clock.tick(FPS)
