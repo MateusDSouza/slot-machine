@@ -25,10 +25,6 @@ class Machine:
         self.spin_sound.set_volume(0.15)
         self.win_three = pygame.mixer.Sound('audio/sigma/win_sound_track.mp3')
         self.win_three.set_volume(0.6)
-        self.win_four = pygame.mixer.Sound('audio/sigma/win_sound_track.mp3')
-        self.win_four.set_volume(0.7)
-        self.win_five = pygame.mixer.Sound('audio/sigma/win_sound_track.mp3')
-        self.win_five.set_volume(0.8)
 
     def coolsdowns(self):
         for reel in self.reel_list:
@@ -123,9 +119,7 @@ class Machine:
         sum = 0
         for item in win_data.values():
             sum += len(item[1])
-        if sum == 3: self.win_three.play()
-        elif sum == 4: self.win_four.play()
-        elif sum > 4: self.win_five.play()
+        if sum >= 3: self.win_three.play()
 
     def win_animation(self):
         if self.win_animation_ongoing and self.win_animation:
